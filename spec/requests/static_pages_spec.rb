@@ -1,37 +1,20 @@
 require 'spec_helper'
 
 describe "Static pages" do
-
-  let(:base_title) { "Kinky Cookie" }
+  subject { page }
 
   describe "Home page" do
+    before { visit root_path } 
 
-    it "should have the content 'Kinky Cookie'" do
-      visit '/static_pages/home'
-      page.should have_content('Kinky Cookie')
-    end
-
-    it "should have the right title" do
-      visit '/static_pages/home'
-      page.should have_selector('title', :text => "#{base_title}")
-    end
-
-    it "should not have a custom page title" do
-      visit '/static_pages/home'
-      page.should_not have_selector('title', :text => '| Home')
-    end
+    it { should have_selector('h1', text: 'Kinky Cookie') }
+    it { should have_selector 'title', text: full_title('') }
+    it { should_not have_selector 'title', text: '| Home' }
   end
 
   describe "About page" do
-
-    it "should have the content 'About'" do
-      visit '/static_pages/about'
-      page.should have_content('About')
-    end
+    before { visit about_path } 
+    
+    it { should have_selector('h1',    text: 'About') }
+    it { should have_selector('title', text: full_title('About')) }
   end
-
-    it "should have the title 'About'" do
-      visit '/static_pages/about'
-      page.should have_selector('title', :text => "#{base_title} | About")
-    end
 end
