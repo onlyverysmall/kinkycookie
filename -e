@@ -1,4 +1,4 @@
-Exception encountered: #<LoadError: cannot load such file -- /Users/sarah/Dropbox/Development/kinkycookie_dev/kinkycookie/signup with invalid information>
+Exception encountered: #<SyntaxError: /Users/sarah/Dropbox/Development/kinkycookie_dev/kinkycookie/spec/requests/authentication_pages_spec.rb:38: syntax error, unexpected keyword_end, expecting $end>
 backtrace:
 /Users/sarah/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:245:in `load'
 /Users/sarah/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:245:in `block in load'
